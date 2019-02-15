@@ -11,7 +11,7 @@ let app = http.createServer((req, res) => {
     res.end('Hello World!\n<button type="button">Click Me!</button>');
 });
 
-let port = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 // Start the server on port 3000
- app.listen(port, 'localhost');
-console.log("Node server running on port  " + port);
+ app.listen(port, () => {
+    console.log(`Our app is running on port ${ PORT }`);
