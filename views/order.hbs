@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wing Bites Imus</title>
+  </head>
+  <body>
+    {{> header}}
+<h2>Sales Order</h2>
+
+<table>
+  <tr>
+    <th>Quantity</th>
+    <th>Item</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>{{uw_qty}}</td>
+    <td>{{uw_desc}}</td>
+    <td>{{uw_price}}</td>
+  </tr>
+    <tr>
+    <td>{{it_qty}}</td>
+    <td>{{it_desc}}</td>
+    <td>{{it_price}}</td>
+  </tr>
+
+   <form action="/print-order" method="post">
+    <input type="hidden" name="uw_qty" value={{uw_qty}}>
+    <input type="hidden" name="uw_desc" value="{{uw_desc}}">
+    <input type="hidden" name="uw_price" value={{uw_price}}>
+    <input type="hidden" name="it_qty" value={{it_qty}}>
+    <input type="hidden" name="it_desc" value="{{it_desc}}">
+    <input type="hidden" name="it_price" value={{it_price}}>
+    <input type="submit" value="Print">
+  </form>
+</table>
+
+
+    {{> footer}}
+  </body>
+</html>
