@@ -35,7 +35,7 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname + '/index.html'));
+  res.sendFile(__dirname + '/index.html');
 //   res.render('home.hbs', {
 //     pageTitle: 'Home Page',
 //     welcomeMessage: 'Welcome to Wing Bites Imus'
