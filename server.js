@@ -35,10 +35,11 @@ hbs.registerHelper('screamIt', (text) => {
 });
 
 app.get('/', (req, res) => {
-  res.render('home.hbs', {
-    pageTitle: 'Home Page',
-    welcomeMessage: 'Welcome to Wing Bites Imus'
-  });
+  res.sendFile(path.join(__dirname + '/index.html'));
+//   res.render('home.hbs', {
+//     pageTitle: 'Home Page',
+//     welcomeMessage: 'Welcome to Wing Bites Imus'
+//   });
 });
 
 app.get('/ordering', (req, res) => {
