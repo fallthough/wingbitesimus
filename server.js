@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-const pos = require('./a.js');
+// const pos = require('./a.js');
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials')
@@ -72,22 +72,22 @@ app.post('/submit-order', (req, res) => {
   });
 });
 
-app.post('/print-order', (req, res, next) => {
-  const total = parseInt(req.body.uw_price) + parseInt(req.body.it_price)
-  var d = new Date().toISOString();
-  pos.print(
-    d,
-    `${req.body.uw_qty} ${req.body.uw_desc} ${req.body.uw_price}`,
-    `${req.body.it_qty} ${req.body.it_desc} ${req.body.it_price}`,
-    '',
-    `TOTAL    ${total}`
-    );
-    res.render('home.hbs', {
-      pageTitle: 'Home Page',
-      welcomeMessage: 'Welcome to Wing Bites Imus'
-    });
-    // res.end();
-});
+// app.post('/print-order', (req, res, next) => {
+//   const total = parseInt(req.body.uw_price) + parseInt(req.body.it_price)
+//   var d = new Date().toISOString();
+//   pos.print(
+//     d,
+//     `${req.body.uw_qty} ${req.body.uw_desc} ${req.body.uw_price}`,
+//     `${req.body.it_qty} ${req.body.it_desc} ${req.body.it_price}`,
+//     '',
+//     `TOTAL    ${total}`
+//     );
+//     res.render('home.hbs', {
+//       pageTitle: 'Home Page',
+//       welcomeMessage: 'Welcome to Wing Bites Imus'
+//     });
+//     // res.end();
+// });
 
 app.listen(3000, () => {
   console.log('Server is up on port 3000');
