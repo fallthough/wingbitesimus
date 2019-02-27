@@ -90,6 +90,8 @@ app.post('/submit-order', (req, res) => {
 //     // res.end();
 // });
 
-app.listen(3000, () => {
-  console.log('Server is up on port 3000');
+const PORT = process.env.PORT || 3000;
+// Start the server on port 3000
+ app.listen(PORT , () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
